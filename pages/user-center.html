@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>用户中心 - 墨韵小说</title>
+  <link rel="stylesheet" href="css/moyun-novel.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">📖 墨韵小说</div>
+    <ul>
+      <li>首页</li><li>分类</li><li>排行榜</li><li>作者专区</li><li>完结</li><li>活动</li>
+    </ul>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="搜索书名 / 作者" />
+    </div>
+    <div class="nav-actions">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;cursor:pointer;">用</div>
+    </div>
+  </nav>
+
+  <div class="user-center">
+
+    <!-- LEFT: Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;">用</div>
+        <div class="sidebar-username">读书人001</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">普通用户</div>
+      </div>
+      <div class="sidebar-item active"><span class="item-icon">📚</span>我的书架</div>
+      <div class="sidebar-item"><span class="item-icon">📖</span>阅读历史</div>
+      <div class="sidebar-item"><span class="item-icon">💬</span>我的评论</div>
+      <div class="sidebar-item"><span class="item-icon">🎯</span>我的打赏</div>
+      <div class="sidebar-item"><span class="item-icon">⚙️</span>账户设置</div>
+      <div class="sidebar-item"><span class="item-icon">🔔</span>消息中心<span class="badge" style="margin-left:auto;">3</span></div>
+      <div class="sidebar-item" style="color:var(--muted);margin-top:8px;"><span class="item-icon">↩</span>退出登录</div>
+    </div>
+
+    <!-- RIGHT: Content -->
+    <div class="user-content">
+      <h3>我的书架</h3>
+      <div class="bookshelf-grid">
+        <div class="bookshelf-item">
+          <div class="bookshelf-cover" style="background:linear-gradient(135deg,#c0392b,#e74c3c);"></div>
+          <div class="bookshelf-title">万道剑尊</div>
+          <div class="bookshelf-progress">读至第256章</div>
+        </div>
+        <div class="bookshelf-item">
+          <div class="bookshelf-cover" style="background:linear-gradient(135deg,#2c3e50,#3498db);"></div>
+          <div class="bookshelf-title">都市极品医神</div>
+          <div class="bookshelf-progress">读至第89章</div>
+        </div>
+        <div class="bookshelf-item">
+          <div class="bookshelf-cover" style="background:linear-gradient(135deg,#8e44ad,#e91e8c);"></div>
+          <div class="bookshelf-title">重生之嫡女归来</div>
+          <div class="bookshelf-progress">读至第43章</div>
+        </div>
+        <div class="bookshelf-item">
+          <div class="bookshelf-add">
+            <span>+</span>
+            <span style="font-size:12px;margin-top:6px;">添加小说</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reading history -->
+      <h3 style="margin-top:32px;">最近阅读</h3>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="update-item" style="max-width:100%;">
+          <div class="update-cover" style="background:linear-gradient(135deg,#c0392b,#e74c3c);"></div>
+          <div class="update-info">
+            <div class="update-title">万道剑尊</div>
+            <div class="update-chapter">上次读至：第256章 剑破苍穹</div>
+            <div class="update-time">今天 14:32</div>
+          </div>
+          <button class="btn-primary" style="flex-shrink:0;font-size:12px;padding:6px 14px;">继续阅读</button>
+        </div>
+        <div class="update-item" style="max-width:100%;">
+          <div class="update-cover" style="background:linear-gradient(135deg,#2c3e50,#3498db);"></div>
+          <div class="update-info">
+            <div class="update-title">都市极品医神</div>
+            <div class="update-chapter">上次读至：第89章 神医出山</div>
+            <div class="update-time">昨天 20:15</div>
+          </div>
+          <button class="btn-primary" style="flex-shrink:0;font-size:12px;padding:6px 14px;">继续阅读</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
