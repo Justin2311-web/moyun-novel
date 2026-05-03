@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作者后台 - 墨韵小说</title>
+  <link rel="stylesheet" href="css/moyun-novel.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">📖 墨韵小说</div>
+    <ul>
+      <li>首页</li><li>分类</li><li>排行榜</li><li class="active">作者专区</li><li>完结</li><li>活动</li>
+    </ul>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="搜索书名 / 作者" />
+    </div>
+    <div class="nav-actions">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ff6b35,#ff9a5a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;cursor:pointer;">墨</div>
+    </div>
+  </nav>
+
+  <div class="author-dashboard">
+
+    <!-- LEFT: Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" style="background:linear-gradient(135deg,#ff6b35,#ff9a5a);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;">墨</div>
+        <div class="sidebar-username">墨渊</div>
+        <div style="font-size:12px;color:var(--primary);margin-top:4px;">✓ 签约作者</div>
+      </div>
+      <div class="sidebar-item active"><span class="item-icon">📝</span>作品管理</div>
+      <div class="sidebar-item"><span class="item-icon">📢</span>发布新书</div>
+      <div class="sidebar-item"><span class="item-icon">📑</span>章节管理</div>
+      <div class="sidebar-item"><span class="item-icon">📊</span>数据统计</div>
+      <div class="sidebar-item"><span class="item-icon">💰</span>收益管理</div>
+      <div class="sidebar-item"><span class="item-icon">💬</span>评论管理</div>
+      <div class="sidebar-item"><span class="item-icon">⚙️</span>账号设置</div>
+    </div>
+
+    <!-- RIGHT: Dashboard Content -->
+    <div>
+
+      <!-- Stats Bar -->
+      <div class="author-stats-bar">
+        <div class="stat-card">
+          <div class="stat-label">总浏览量</div>
+          <div class="stat-value">12.3万</div>
+          <div class="stat-change up">↑ 8.2% 较昨日</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">总收藏数</div>
+          <div class="stat-value">1.2万</div>
+          <div class="stat-change up">↑ 3.5% 较昨日</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">本月收益</div>
+          <div class="stat-value">¥3,580</div>
+          <div class="stat-change up">↑ 12.1% 较上月</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">粉丝数</div>
+          <div class="stat-value">9,860</div>
+          <div class="stat-change down">↓ 0.3% 较昨日</div>
+        </div>
+      </div>
+
+      <!-- Works Management -->
+      <div class="user-content">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+          <h3 style="margin:0;border:none;padding:0;">作品管理</h3>
+          <button class="btn-primary">+ 新建作品</button>
+        </div>
+
+        <table class="works-table">
+          <thead>
+            <tr>
+              <th style="width:60px;">封面</th>
+              <th>书名</th>
+              <th>状态</th>
+              <th>字数</th>
+              <th>浏览</th>
+              <th>收藏</th>
+              <th>更新时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="works-table book-thumb" style="background:linear-gradient(135deg,#c0392b,#e74c3c);width:44px;height:58px;border-radius:6px;"></div></td>
+              <td>
+                <div style="font-weight:500;">万道剑尊</div>
+                <div style="font-size:12px;color:var(--muted);">123.5万字</div>
+              </td>
+              <td><span class="book-status status-ongoing">连载中</span></td>
+              <td>123.5万</td>
+              <td>12.3万</td>
+              <td>1.2万</td>
+              <td style="font-size:12px;color:var(--muted);">2024-05-20</td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="btn-ghost" style="font-size:12px;padding:4px 10px;">编辑</button>
+                  <button class="btn-outline" style="font-size:12px;padding:4px 10px;">章节</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div style="background:linear-gradient(135deg,#2c3e50,#3498db);width:44px;height:58px;border-radius:6px;"></div></td>
+              <td>
+                <div style="font-weight:500;">都市极品医神</div>
+                <div style="font-size:12px;color:var(--muted);">98.6万字</div>
+              </td>
+              <td><span class="book-status status-ongoing">连载中</span></td>
+              <td>98.6万</td>
+              <td>9.8万</td>
+              <td>9860</td>
+              <td style="font-size:12px;color:var(--muted);">2024-05-18</td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="btn-ghost" style="font-size:12px;padding:4px 10px;">编辑</button>
+                  <button class="btn-outline" style="font-size:12px;padding:4px 10px;">章节</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div style="background:linear-gradient(135deg,#8e44ad,#e91e8c);width:44px;height:58px;border-radius:6px;"></div></td>
+              <td>
+                <div style="font-weight:500;">重生之嫡女归来</div>
+                <div style="font-size:12px;color:var(--muted);">76.3万字</div>
+              </td>
+              <td><span class="book-status status-finished">已完结</span></td>
+              <td>76.3万</td>
+              <td>7.6万</td>
+              <td>7654</td>
+              <td style="font-size:12px;color:var(--muted);">2024-05-15</td>
+              <td>
+                <div style="display:flex;gap:6px;">
+                  <button class="btn-ghost" style="font-size:12px;padding:4px 10px;">编辑</button>
+                  <button class="btn-outline" style="font-size:12px;padding:4px 10px;">章节</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
