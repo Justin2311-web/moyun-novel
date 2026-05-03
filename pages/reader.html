@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>阅读 - 万道剑尊 第1章</title>
+  <link rel="stylesheet" href="css/moyun-novel.css" />
+</head>
+<body style="background: var(--reader-bg); padding-bottom: 80px;">
+
+  <!-- Reader Top Nav -->
+  <div class="reader-nav">
+    <span class="back-btn">‹ 返回</span>
+    <span class="chapter-title">万道剑尊 – 第1章 剑脉觉醒</span>
+    <div class="reader-actions">
+      <span>加入书架</span>
+      <span>更多</span>
+    </div>
+  </div>
+
+  <!-- Reading Content -->
+  <div class="reader">
+    <h2 style="font-size:20px;font-weight:bold;text-align:center;margin-bottom:32px;">第1章 剑脉觉醒</h2>
+
+    <p>大炎王朝，青云镇。</p>
+    <p>楚府，后山。</p>
+    <p>"楚尘，废物一个，也配修炼？"</p>
+    <p>一道嘲讽声传来，楚尘缓缓睁开双眼，眼中闪过一抹寒光。他本是现代世界的顶级剑道天才，却意外穿越到这个同名同姓的废物身上。</p>
+    <p>原主无法修炼，被家族视为耻辱，受尽欺凌。</p>
+    <p>"竟然……竟然在这具身体里，发现了剑脉！这具身体……楚尘感受着体内涌动的力量，嘴角露出一抹冷笑。</p>
+    <p>从这一刻起，废物？不，他要让所有人知道，什么叫天才归来！</p>
+
+    <!-- Progress + Controls -->
+    <div class="reader-controls">
+      <button class="btn-ghost">‹ 上一章</button>
+      <div class="reader-progress">
+        <span>进度</span>
+        <input type="range" min="0" max="100" value="20" id="progress-bar" />
+        <span id="progress-label">20%</span>
+      </div>
+      <button class="btn-primary">下一章 ›</button>
+    </div>
+  </div>
+
+  <!-- Reader Settings Panel -->
+  <div class="reader-settings" id="reader-settings" style="display:none;">
+    <h4>阅读设置</h4>
+
+    <div class="setting-row">
+      <span class="setting-label">字号</span>
+      <div class="font-size-control">
+        <button class="size-btn" id="font-down">A-</button>
+        <span class="size-value" id="font-size-val">16</span>
+        <button class="size-btn" id="font-up">A+</button>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <span class="setting-label">背景</span>
+      <div class="bg-options">
+        <div class="bg-option white active" data-bg="#ffffff" title="白色"></div>
+        <div class="bg-option beige" data-bg="#fdf8f0" title="米色"></div>
+        <div class="bg-option green" data-bg="#e8f5e9" title="绿色"></div>
+        <div class="bg-option dark" data-bg="#2c2c2c" title="深色"></div>
+        <div class="bg-option black" data-bg="#1a1a1a" title="黑色"></div>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <span class="setting-label">翻页</span>
+      <div class="setting-options">
+        <button class="setting-btn active">仿真</button>
+        <button class="setting-btn">滑动</button>
+        <button class="setting-btn">无</button>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <span class="setting-label">行距</span>
+      <div class="setting-options">
+        <button class="setting-btn">≡</button>
+        <button class="setting-btn active">≡</button>
+        <button class="setting-btn">≡</button>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <span class="setting-label">字体</span>
+      <div class="setting-options">
+        <button class="setting-btn active">默认</button>
+        <button class="setting-btn">宋体</button>
+        <button class="setting-btn">楷体</button>
+      </div>
+    </div>
+
+    <button class="btn-ghost" style="width:100%;margin-top:8px;">更多设置 ›</button>
+  </div>
+
+  <!-- Bottom Toolbar -->
+  <div class="reader-toolbar">
+    <div class="tool-item">
+      <span class="tool-icon">☰</span>
+      <span>目录</span>
+    </div>
+    <div class="tool-item">
+      <span class="tool-icon">🌙</span>
+      <span>夜间</span>
+    </div>
+    <div class="tool-item" id="settings-toggle">
+      <span class="tool-icon">⚙</span>
+      <span>设置</span>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Progress bar
+    const bar = document.getElementById('progress-bar');
+    const label = document.getElementById('progress-label');
+    bar.addEventListener('input', () => { label.textContent = bar.value + '%'; });
+
+    // Font size
+    let fontSize = 18;
+    const readerEl = document.querySelector('.reader');
+    document.getElementById('font-up').addEventListener('click', () => {
+      if (fontSize < 28) { fontSize += 2; readerEl.style.fontSize = fontSize + 'px'; document.getElementById('font-size-val').textContent = fontSize; }
+    });
+    document.getElementById('font-down').addEventListener('click', () => {
+      if (fontSize > 12) { fontSize -= 2; readerEl.style.fontSize = fontSize + 'px'; document.getElementById('font-size-val').textContent = fontSize; }
+    });
+
+    // Background options
+    document.querySelectorAll('.bg-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.bg-option').forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+        document.body.style.background = opt.dataset.bg;
+        readerEl.style.background = opt.dataset.bg;
+        readerEl.style.color = opt.dataset.bg === '#1a1a1a' || opt.dataset.bg === '#2c2c2c' ? '#ccc' : '#333';
+      });
+    });
+
+    // Settings panel toggle
+    const panel = document.getElementById('reader-settings');
+    document.getElementById('settings-toggle').addEventListener('click', () => {
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Setting buttons toggle
+    document.querySelectorAll('.setting-options').forEach(group => {
+      group.querySelectorAll('.setting-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.setting-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
